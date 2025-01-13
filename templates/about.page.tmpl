@@ -1,0 +1,20 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>{{index .StringMap "test"}}</h1>
+                <p>This made by GoLang</p>
+                <p>and with love ofc</p>
+                <p>
+                    {{if ne (index .StringMap "remote_ip") ""}}
+                        Your IP Address is {{index .StringMap "remote_ip"}}
+                    {{else}}
+                        I don't know your IP Address yet. Please visit <a href="/">Homepage</a> first
+                    {{end}}
+                </p>
+            </div>
+        </div>
+    </div>
+{{end}}
